@@ -4,6 +4,7 @@
     <view>
       <text class="title">{{ title }}</text>
     </view>
+    <view class="sass">sass</view>
   </view>
 </template>
 
@@ -19,12 +20,17 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .sass {
+    background-color: blue;
+    color: red;
+  }
 }
 
 .logo {
