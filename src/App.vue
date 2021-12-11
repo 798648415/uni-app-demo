@@ -1,7 +1,7 @@
 <script>
 export default {
   globalData: {
-    text: "text",
+    text: "测试globalData",
   },
 
   onLaunch: function () {

@@ -1,17 +1,41 @@
 <template>
-  <div class="test">test</div>
+  <view>
+    <circle-img :src="path" @imgClick="onImgClick()"></circle-img>
+    <view>点击上面图片获取路径：{{ src }}</view>
+    <!-- 测试插槽slot -->
+    <my-form>
+      <input placeholder="请写点什么" />
+      <radio />
+      <checkbox />
+    </my-form>
+  </view>
 </template>
 
 <script>
+import CircleImg from "@/components/circle-img";
+import MyForm from "@/components/my-form";
+
 export default {
-  components: {},
-  data: () => ({}),
+  components: {
+    CircleImg,
+    MyForm,
+  },
+  data: () => ({
+    path: "/static/logo.png",
+    src: "",
+  }),
   computed: {},
-  methods: {},
+  methods: {
+    onImgClick(e) {
+      this.src = e;
+    },
+  },
   watch: {},
 
   // 页面周期函数--监听页面加载
-  onLoad() {},
+  onLoad() {
+    // TODO todo测试
+  },
   // 页面周期函数--监听页面初次渲染完成
   onReady() {},
   // 页面周期函数--监听页面显示(not-nvue)

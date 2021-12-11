@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import app from "@/App";
 
 export default {
   data() {
@@ -71,7 +70,8 @@ export default {
   },
 
   onLoad() {
-    console.log("globalData测试", app.globalData.text);
+    console.log("Vue.prototype.baseUrl", this.baseUrl);
+    console.log("globalData测试", getApp().globalData.text);
   },
 
   methods: {
@@ -87,6 +87,7 @@ export default {
       console.log('handleClick', event);
       console.log('index', event.currentTarget.dataset.index);
       console.log('index', event.target.dataset.index);
+      uni.navigateTo({ url: "/pages/test/test" });
     }
   },
 };
