@@ -6,7 +6,7 @@
       <button hover-class="button-hover" @click="startUser()">登录</button>
       <!-- v-bind -->
       <view v-bind:style="style">{{ msg }}</view>
-      <view :style="style">{{ msg }}省略</view>
+      <view :style="style">{{ msg }}省略用法</view>
       <!-- v-text -->
       <view v-text="text"></view>
       <view v-text="text">==============</view>
@@ -14,7 +14,7 @@
       <view>{{ html }}</view>
       <view v-html="html"></view>
       <!-- v-for -->
-      <view v-for="(item, index) in list" :key="item.id">
+      <view v-for="(item, index) in list" :key="index">
         <view>{{ item.id }} -- {{ item.text }} -- {{ index }}</view>
       </view>
       <!-- v-if和v-show -->
@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       title: "Hello World",
-      msg: "测试v-bind",
+      msg: "测试v-bind指令",
       style: "color:red;",
       text: "测试v-text",
       html: "<view>测试v-html</view>",
